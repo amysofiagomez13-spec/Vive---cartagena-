@@ -7,7 +7,117 @@
 <title>Vive Cartagena | Tu guía del Caribe</title>
 <style>
 :root{--navy:#073b49;--teal:#087e8b;--sand:#f5dca4;--ink:#19333a;--muted:#60777b;--bg:#f5f8f7;--white:#fff}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}a{color:inherit}.hero{background:linear-gradient(135deg,#073b49,#087e8b);color:white;padding:24px 18px 30px;border-radius:0 0 26px 26px}.top{display:flex;align-items:center;gap:12px;max-width:1050px;margin:auto}.logo{width:48px;height:48px;border-radius:15px;background:var(--sand);color:var(--navy);display:grid;place-items:center;font-size:27px}.brand{font-weight:850;font-size:1.18rem;letter-spacing:.04em}.tag{font-size:.8rem;color:#d6eeee}.hero-inner{max-width:1050px;margin:25px auto 0}.eyebrow{color:var(--sand);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.13em}.hero h1{font-size:clamp(2rem,6vw,3.5rem);line-height:1.05;margin:9px 0 12px;max-width:650px}.hero p{color:#e1f0ef;max-width:600px;margin:0 0 20px}.search{display:flex;gap:8px;max-width:620px}.search input{min-width:0;flex:1;padding:14px 15px;border:0;border-radius:12px;font-size:1rem}.search button,.btn{border:0;border-radius:12px;padding:13px 16px;background:var(--sand);color:var(--navy);font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}.wrap{max-width:1050px;margin:auto;padding:22px 16px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:10px;flex-wrap:wrap}.section-head h2{margin:0;font-size:1.35rem}.section-head p{margin:5px 0 0;color:var(--muted);font-size:.92rem}.chips{display:flex;gap:8px;overflow:auto;padding:16px 0 5px}.chip{border:1px solid #d8e4e2;background:white;padding:9px 13px;border-radius:99px;white-space:nowrap;cursor:pointer;color:var(--ink)}.chip.active{background:var(--navy);color:white;border-color:var(--navy)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px;margin-top:15px}.card{background:white;border:1px solid #e1eae8;border-radius:18px;overflow:hidden;box-shadow:0 4px 15px #163b4410;display:flex;flex-direction:column}.photo{height:142px;display:grid;place-items:center;font-size:3.5rem;background:linear-gradient(135deg,#c9ece8,#f7e8c5)}.card-body{padding:15px;display:flex;flex-direction:column;flex:1}.category{font-size:.73rem;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);font-weight:800}.card h3{margin:6px 0;font-size:1.1rem}.card p{margin:0 0 13px;color:var(--muted);font-size:.9rem;line-height:1.45}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}.actions a{font-size:.82rem;padding:9px 11px;border-radius:10px;background:#e8f4f2;text-decoration:none;font-weight:750}.actions a.primary{background:var(--navy);color:white}.note{margin-top:22px;padding:16px;border-radius:15px;background:#fff8e8;border:1px solid #f0dfb8;font-size:.9rem;line-height:1.5}.business{background:var(--navy);color:white;border-radius:20px;padding:22px;margin-top:25px}.business p{color:#d7e9e8;line-height:1.5}.business a{background:var(--sand);color:var(--navy)}footer{text-align:center;padding:25px 15px;color:var(--muted);font-size:.82rem}.hidden{display:none!important}
-https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1800&q=85</style>
+
+/* VIVE CARTAGENA — ESTILO TROPICAL */
+.hero {
+  background:
+    linear-gradient(90deg, rgba(3, 43, 52, .88), rgba(3, 70, 75, .42)),
+    url("https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1800&q=85") center/cover;
+  padding-top: 30px;
+  padding-bottom: 42px;
+  border-radius: 0 0 30px 30px;
+}
+
+.logo {
+  border-radius: 50%;
+  box-shadow: 0 5px 18px #0002;
+}
+
+.search input {
+  outline-color: #f5dca4;
+}
+
+.search button,
+.btn {
+  transition: transform .2s, box-shadow .2s;
+}
+
+.search button:hover,
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px #0002;
+}
+
+.chip {
+  transition: background .2s, color .2s;
+}
+
+.card {
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px #163b441c;
+}
+
+.photo {
+  height: 190px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  font-size: 0;
+}
+
+.photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #073b4930, transparent 60%);
+}
+
+#places .card:nth-child(1) .photo {
+  background-image: url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80");
+}
+
+#places .card:nth-child(2) .photo {
+  background-image: url("https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=800&q=80");
+}
+
+#places .card:nth-child(3) .photo {
+  background-image: url("https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80");
+}
+
+#places .card:nth-child(4) .photo,
+#places .card:nth-child(5) .photo,
+#places .card:nth-child(6) .photo {
+  background-image: url("https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80");
+}
+
+#places .card:nth-child(7) .photo,
+#places .card:nth-child(8) .photo {
+  background-image: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80");
+}
+
+.business {
+  background:
+    linear-gradient(135deg, #073b49, #087e8b);
+  box-shadow: 0 10px 28px #073b4920;
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding: 22px 16px 30px;
+  }
+
+  .search {
+    flex-wrap: wrap;
+  }
+
+  .search input {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .search button {
+    width: 100%;
+  }
+
+  .photo {
+    height: 175px;
+  }
+}
+</style>
 </head>
 <body>
 <header class="hero"><div class="top"><div class="logo" aria-hidden="true">🌴</div><div><div class="brand">VIVE CARTAGENA</div><div class="tag">Descubre · Disfruta · Vive el Caribe</div></div></div><div class="hero-inner"><div class="eyebrow">Tu guía local</div><h1>La magia de Cartagena, a tu alcance.</h1><p>Encuentra playas, islas, historia, sabores y experiencias para planear tu aventura en el Caribe colombiano.</p><form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="Busca playas, restaurantes, tours…" aria-label="Buscar lugares"><button type="submit">Buscar</button></form></div></header>
