@@ -123,7 +123,22 @@
 }/* Foto 9: Getsemaní */
 #places .card:nth-child(9) .photo {
   background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Getsemani_Street_Art%2C_Cartagena%2C_Colombia_%2824559089686%29.jpg?width=800");
-}</style>
+}/* ===== MEJORA VISUAL VIVE CARTAGENA ===== */
+:root { --navy: #073b4c; --teal: #087e8b; --sand: #fff8ef; --coral: #ff6b61; }
+body { background-color: var(--sand); color: var(--navy); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+h1, h2, h3 { color: var(--navy); line-height: 1.2; }
+button, .btn { background-color: var(--coral); color: #ffffff; border: none; border-radius: 28px; padding: 12px 20px; font-weight: bold; transition: all 0.25s ease; }
+button:hover, .btn:hover { background-color: var(--teal); transform: translateY(-2px); }
+.card { border-radius: 18px; overflow: hidden; box-shadow: 0 8px 24px rgba(7, 59, 76, 0.12); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(7, 59, 76, 0.18); }
+.card img { display: block; width: 100%; object-fit: cover; }
+input, select, textarea { border: 1px solid #c9dfe0; border-radius: 12px; padding: 12px; max-width: 100%; box-sizing: border-box; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--teal); }
+@media (max-width: 520px) { body { font-size: 16px; }
+h1 { font-size: 30px; }
+.card { margin-bottom: 16px; } }
+/* ===== FIN DE LA MEJORA VISUAL ===== */
+</style>
 </head>
 <body>
 <header class="hero"><div class="top"><div class="logo" aria-hidden="true">🌴</div><div><div class="brand">VIVE CARTAGENA</div><div class="tag">Descubre · Disfruta · Vive el Caribe</div></div></div><div class="hero-inner"><div class="eyebrow">Tu guía local</div><h1>La magia de Cartagena, a tu alcance.</h1><p>Encuentra playas, islas, historia, sabores y experiencias para planear tu aventura en el Caribe colombiano.</p><form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="Busca playas, restaurantes, tours…" aria-label="Buscar lugares"><button type="submit">Buscar</button></form></div></header>
