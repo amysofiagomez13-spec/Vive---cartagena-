@@ -133,7 +133,90 @@
 <article class="card" data-category="Barrios y paseos" data-search="getsemani barrio murales arte cultura calles plazas cartagena"><div class="photo">🎨</div><div class="card-body"><div class="category">Barrios y paseos</div><h3>Getsemaní</h3><p>Un barrio reconocido por su arte urbano, plazas y ambiente cultural. Respeta a sus residentes.</p><div class="actions"><a class="primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Getsemani+Cartagena">Ver en el mapa ↗</a></div></div></article>
 </div><p id="empty" class="hidden">No encontramos resultados. Prueba con otra palabra o categoría.</p></section>
 <div class="note"><strong>Consejo para viajeros:</strong> antes de pagar, confirma el precio total, lo que incluye la actividad, el transporte, los horarios y las políticas de cancelación. Los datos de esta primera versión son orientativos; verifica horarios, tarifas y disponibilidad directamente con cada lugar.</div>
-<section class="business"><h2>¿Tienes un negocio turístico?</h2><p>Restaurantes, hoteles, guías y operadores: próximamente podrán solicitar un espacio para promocionar sus servicios en Vive Cartagena.</p><a class="
+
+<section id="registro-negocios" style="background:#fff;padding:22px;border-radius:20px;border:1px solid #d8e8e4;margin:25px 0;box-shadow:0 5px 18px #073b4910">
+  <div style="text-align:center;margin-bottom:20px">
+    <div style="font-size:38px">🌴</div>
+    <h2 style="color:#073b49;margin:8px 0">Registra tu negocio</h2>
+    <p style="color:#60777b;line-height:1.5">Haz parte de Vive Cartagena y presenta tus servicios a los visitantes. Tu solicitud será revisada antes de publicar.</p>
+  </div>
+
+  <form id="registroNegociosForm" style="display:grid;gap:13px">
+    <label>Nombre del negocio *
+      <input name="negocio" required maxlength="100" placeholder="Ej. Hotel Paraíso Caribe" style="display:block;width:100%;padding:12px;margin-top:5px;border:1px solid #ccdcd8;border-radius:10px;font:inherit">
+    </label>
+
+    <label>Categoría *
+      <select name="categoria" required style="display:block;width:100%;padding:12px;margin-top:5px;border:1px solid #ccdcd8;border-radius:10px;background:white;font:inherit">
+        <option value="">Selecciona una categoría</option>
+        <option>Hoteles y alojamientos</option>
+        <option>Restaurantes y bares</option>
+        <option>Tours y agencias turísticas</option>
+        <option>Guías turísticos</option>
+        <option>Transporte turístico</option>
+        <option>Tiendas y otros negocios</option>
+      </select>
+    </label>
+
+    <label>Nombre del responsable *
+      <input name="responsable" required maxlength="100" placeholder="Nombre de contacto" style="display:block;width:100%;padding:12px;margin-top:5px;border:1px solid #ccdcd8;border-radius:10px;font:inherit">
+    </label>
+
+    <label>WhatsApp del negocio *
+      <input name="telefono" type="tel" required maxlength="25" placeholder="Ej. 3001234567" style="display:block;width:100%;padding:12px;margin-top:5px;border:1px solid #ccdcd8;border-radius:10px;font:inherit">
+    </label>
+
+    <label>Dirección o ubicación *
+      <input name="direccion" required maxlength="200" placeholder="Barrio, dirección o zona turística" style="display:block;width:100%;padding:12px;margin-top:5px;border:1px solid #ccdcd8;border-radius:10px;font:inherit">
+    </label>
+
+    <label>Descripción de los servicios *
+      <textarea name="descripcion" required maxlength="700" rows="4" placeholder="Cuéntales a los visitantes qué ofrece tu negocio." style="display:block;width:100%;padding:12px;margin-top:5px;border:1px solid #ccdcd8;border-radius:10px;font:inherit;resize:vertical"></textarea>
+    </label>
+
+    <label>Enlace de fotos, página web o redes sociales (opcional)
+      <input name="enlace" type="url" maxlength="300" placeholder="https://..." style="display:block;width:100%;padding:12px;margin-top:5px;border:1px solid #ccdcd8;border-radius:10px;font:inherit">
+    </label>
+
+    <label style="display:flex;gap:9px;align-items:flex-start;font-size:.9rem;line-height:1.5">
+      <input type="checkbox" name="autorizacion" required style="margin-top:4px">
+      Autorizo el envío de estos datos para gestionar mi solicitud de registro y acepto que sean revisados antes de publicar.
+    </label>
+
+    <button type="submit" style="background:#087e8b;color:white;border:0;padding:15px;border-radius:12px;font-weight:800;font-size:1rem;cursor:pointer">
+      Enviar solicitud por WhatsApp ↗
+    </button>
+
+    <p style="font-size:.82rem;color:#60777b;margin:0">El registro no garantiza la publicación. El administrador revisará y aprobará cada solicitud.</p>
+  </form>
+</section>
+
+<script>
+document.getElementById('registroNegociosForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const f = new FormData(this);
+  const mensaje = [
+    'SOLICITUD DE REGISTRO - VIVE CARTAGENA',
+    '',
+    'Negocio: ' + f.get('negocio'),
+    'Categoría: ' + f.get('categoria'),
+    'Responsable: ' + f.get('responsable'),
+    'WhatsApp: ' + f.get('telefono'),
+    'Dirección: ' + f.get('direccion'),
+    'Descripción: ' + f.get('descripcion'),
+    'Enlace: ' + (f.get('enlace') || 'No proporcionado'),
+    '',
+    'Solicito revisión y aprobación antes de publicar.'
+  ].join('\n');
+
+  window.open(
+    'https://wa.me/573136069821?text=' + encodeURIComponent(mensaje),
+    '_blank'
+  );
+});
+</script>
+  section class="business"><h2>¿Tienes un negocio turístico?</h2><p>Restaurantes, hoteles, guías y operadores: próximamente podrán solicitar un espacio para promocionar sus servicios en Vive Cartagena.</p><a class="
 <a class="btn" href="https://wa.me/573136069821?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Vive%20Cartagena" target="_blank" rel="noopener">Consultar por WhatsApp ↗</a>
   " target="_blank" rel="noopener">Consultar por WhatsApp ↗</a></section>
 </main><footer>Vive Cartagena · Prototipo inicial independiente. No es un sitio oficial de turismo.<br>Los negocios y servicios deben verificarse antes de recomendarse o vender reservas.</footer>
