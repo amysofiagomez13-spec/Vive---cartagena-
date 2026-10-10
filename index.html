@@ -244,4 +244,66 @@ document.getElementById('registroNegociosForm').addEventListener('submit', funct
 <script>
 const cards=[...document.querySelectorAll('.card')];let current='Todos';let term='';function update(){let count=0;cards.forEach(card=>{const category=card.dataset.category;const search=(card.dataset.search+' '+card.innerText).toLowerCase();const show=(current==='Todos'||category===current)&&search.includes(term);card.classList.toggle('hidden',!show);if(show)count++});document.querySelector('#empty').classList.toggle('hidden',count!==0)}document.querySelectorAll('.chip').forEach(btn=>btn.addEventListener('click',()=>{current=btn.dataset.filter;document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('active',b===btn));update()}));document.querySelector('#searchForm').addEventListener('submit',e=>{e.preventDefault();term=document.querySelector('#searchInput').value.trim().toLowerCase();update()});document.querySelector('#searchInput').addEventListener('input',e=>{term=e.target.value.trim().toLowerCase();update()});if('serviceWorker'in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 </script>
+
+<section id="categorias" class="categorias">
+  <h2>Descubre Cartagena</h2>
+  <p>Explora, disfruta y vive una experiencia inolvidable.</p>
+
+  <div class="categorias-grid">
+    <a href="#restaurantes" class="categoria">
+      🍽️ <span>Restaurantes</span>
+    </a>
+    <a href="#hoteles" class="categoria">
+      🏨 <span>Hoteles</span>
+    </a>
+    <a href="#lugares" class="categoria">
+      🏝️ <span>Lugares turísticos</span>
+    </a>
+    <a href="#tours" class="categoria">
+      🚤 <span>Tours y paseos</span>
+    </a>
+    <a href="#diversion" class="categoria">
+      🎉 <span>Diversión</span>
+    </a>
+    <a href="#transporte" class="categoria">
+      🚕 <span>Transporte turístico</span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .categorias {
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  .categorias h2 {
+    color: #087e8b;
+    font-size: 25px;
+  }
+
+  .categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 8px;
+    border-radius: 14px;
+    background: #eaf7f6;
+    color: #174b50;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .categoria:active {
+    background: #d1eeea;
+  }
+</style>
 </body></html>
