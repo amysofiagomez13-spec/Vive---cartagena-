@@ -391,4 +391,104 @@ const cards=[...document.querySelectorAll('.card')];let current='Todos';let term
     margin-top: 8px;
   }
 </style>
+
+<section id="destacados" class="destacados-vive">
+  <h2>⭐ Imperdibles de Cartagena</h2>
+  <p>Empieza tu aventura descubriendo estos lugares.</p>
+
+  <article class="ficha-turistica">
+    <img
+      src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=900&q=80"
+      alt="Paisaje urbano turístico"
+      loading="lazy">
+    <div class="contenido-ficha">
+      <span class="etiqueta-vive">Historia y cultura</span>
+      <h3>Ciudad Amurallada</h3>
+      <p>Recorre plazas, calles coloniales y balcones llenos de historia.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Ciudad+Amurallada+Cartagena+Colombia"
+         target="_blank" rel="noopener">📍 Ver ubicación</a>
+    </div>
+  </article>
+
+  <article class="ficha-turistica">
+    <img
+      src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=900&q=80"
+      alt="Fortaleza de piedra"
+      loading="lazy">
+    <div class="contenido-ficha">
+      <span class="etiqueta-vive">Patrimonio histórico</span>
+      <h3>Castillo de San Felipe</h3>
+      <p>Conoce una de las fortalezas más emblemáticas de Cartagena.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Castillo+San+Felipe+de+Barajas+Cartagena"
+         target="_blank" rel="noopener">📍 Ver ubicación</a>
+    </div>
+  </article>
+
+  <article class="ficha-turistica">
+    <img
+      src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80"
+      alt="Arquitectura urbana"
+      loading="lazy">
+    <div class="contenido-ficha">
+      <span class="etiqueta-vive">Arte y cultura</span>
+      <h3>Getsemaní</h3>
+      <p>Explora el arte urbano, las plazas y la cultura local.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Getsemani+Cartagena+Colombia"
+         target="_blank" rel="noopener">📍 Ver ubicación</a>
+    </div>
+  </article>
+</section>
+
+<style>
+  .destacados-vive {
+    padding: 24px 16px;
+    background: #ffffff;
+  }
+
+  .destacados-vive > h2 {
+    color: #087e8b;
+    font-size: 25px;
+  }
+
+  .ficha-turistica {
+    margin: 18px 0;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #f0f8f7;
+    box-shadow: 0 3px 12px #00000012;
+  }
+
+  .ficha-turistica img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+  }
+
+  .contenido-ficha {
+    padding: 16px;
+  }
+
+  .contenido-ficha h3 {
+    color: #174b50;
+    margin: 12px 0 8px;
+  }
+
+  .etiqueta-vive {
+    color: #087e8b;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .contenido-ficha a {
+    display: inline-block;
+    padding: 10px 14px;
+    margin-top: 8px;
+    background: #087e8b;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+    </style>
 </body></html>
