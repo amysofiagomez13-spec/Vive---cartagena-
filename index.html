@@ -140,7 +140,70 @@ h1 { font-size: 30px; }
 /* ===== FIN DE LA MEJORA VISUAL ===== */
 </style>
 </head>
-<body>
+<body><section id="portada-vive" class="portada-vive">
+  <div class="portada-contenido">
+    <span class="portada-etiqueta">TU GUÍA DEL CARIBE</span>
+
+    <h1>Vive Cartagena</h1>
+
+    <p>Descubre la magia del Caribe colombiano. Playas, historia, cultura y experiencias inolvidables te esperan.</p>
+
+    <a href="#categorias" class="boton-explorar">
+      Explorar Cartagena →
+    </a>
+  </div>
+</section>
+
+<style>
+  .portada-vive {
+    min-height: 390px;
+    display: flex;
+    align-items: flex-end;
+    padding: 35px 22px;
+    box-sizing: border-box;
+    border-radius: 0 0 22px 22px;
+    background:
+      linear-gradient(to top, rgba(7, 42, 48, .92), rgba(7, 42, 48, .10)),
+      url("https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=1200&q=85")
+      center/cover no-repeat;
+    color: white;
+  }
+
+  .portada-contenido {
+    max-width: 600px;
+  }
+
+  .portada-etiqueta {
+    color: #9ce6d8;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+
+  .portada-vive h1 {
+    color: white;
+    font-size: 38px;
+    line-height: 1.15;
+    margin: 12px 0;
+  }
+
+  .portada-vive p {
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .boton-explorar {
+    display: inline-block;
+    padding: 14px 20px;
+    background: #e7b65c;
+    color: #173d40;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+</style>
 <header class="hero"><div class="top"><div class="logo" aria-hidden="true">🌴</div><div><div class="brand">VIVE CARTAGENA</div><div class="tag">Descubre · Disfruta · Vive el Caribe</div></div></div><div class="hero-inner"><div class="eyebrow">Tu guía local</div><h1>La magia de Cartagena, a tu alcance.</h1><p>Encuentra playas, islas, historia, sabores y experiencias para planear tu aventura en el Caribe colombiano.</p><form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="Busca playas, restaurantes, tours…" aria-label="Buscar lugares"><button type="submit">Buscar</button></form></div></header>
 <main class="wrap"><section><div class="section-head"><div><h2>Explora Cartagena</h2><p>Elige una categoría y descubre ideas para tu visita.</p></div></div><div class="chips" id="filters"><button class="chip active" data-filter="Todos">Todo</button><button class="chip" data-filter="Playas e islas">🏝️ Playas e islas</button><button class="chip" data-filter="Historia y cultura">🏰 Historia</button><button class="chip" data-filter="Comida">🍤 Gastronomía</button><button class="chip" data-filter="Tours y experiencias">⛵ Tours</button><button class="chip" data-filter="Barrios y paseos">🚶 Paseos</button></div><div class="grid" id="places">
 <article class="card" data-category="Playas e islas" data-search="playa blanca baru playa arena mar islas"><div class="photo">🏖️</div><div class="card-body"><div class="category">Playas e islas</div><h3>Playa Blanca, Barú</h3><p>Una conocida playa de arena clara y mar Caribe. Confirma transporte, precios y condiciones antes de salir.</p><div class="actions"><a class="primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Playa+Blanca+Baru+Cartagena">Ver en el mapa ↗</a></div></div></article>
