@@ -411,20 +411,131 @@ body > .hero {
   </div>
 </article>
 
-<article class="card" data-category="Historia y cultura" data-search="plaza santo domingo centro historico arquitectura colonial cartagena">
+  <article class="card card-explorable"
+  data-category="Historia y cultura"
+  data-search="plaza santo domingo centro historico arquitectura colonial cartagena">
+
   <div class="photo" style="height:190px;overflow:hidden;">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Colombia%2C_Cartagena%2C_Sector_Antiguo%2C_Plaza_de_Santo_Domingo.jpg?width=960" alt="Plaza de Santo Domingo en Cartagena" style="width:100%;height:100%;object-fit:cover;">
+    <img
+      src="https://commons.wikimedia.org/wiki/Special:FilePath/Colombia%2C_Cartagena%2C_Sector_Antiguo%2C_Plaza_de_Santo_Domingo.jpg?width=960"
+      alt="Plaza de Santo Domingo en Cartagena"
+      style="width:100%;height:100%;object-fit:cover;">
   </div>
+
   <div class="card-body">
     <div class="category">Historia y cultura</div>
     <h3>Plaza de Santo Domingo</h3>
-    <p>Plaza emblemática del Centro Histórico de Cartagena, rodeada de arquitectura colonial, restaurantes y terrazas. Allí se encuentra la escultura Gertrudis, del artista Fernando Botero.</p>
+
+    <p>
+      Plaza emblemática del Centro Histórico de Cartagena,
+      rodeada de arquitectura colonial, restaurantes y terrazas.
+      Allí se encuentra la escultura Gertrudis, del artista
+      Fernando Botero.
+    </p>
+
     <div class="actions">
-      <a class="primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Plaza+de+Santo+Domingo+Cartagena">Ver en el mapa ↗</a>
+      <a class="primary" target="_blank" rel="noopener"
+        href="https://www.google.com/maps/search/?api=1&query=Plaza+de+Santo+Domingo+Cartagena">
+        Ver en el mapa ↗
+      </a>
     </div>
+
+    <button type="button"
+      class="primary"
+      style="margin-top:10px;width:100%;cursor:pointer;"
+      onclick="abrirFichaVive('santo-domingo')">
+      📸 Toca para descubrir más
+    </button>
+  </div>
+</article>
+
+<!-- Ficha detallada de la Plaza de Santo Domingo -->
+<section id="ficha-santo-domingo"
+  class="ficha-vive"
+  style="display:none;padding:20px;margin:20px 0;border-radius:14px;">
+
+  <button type="button" class="primary"
+    onclick="cerrarFichaVive('santo-domingo')">
+    ← Volver a Vive Cartagena
+  </button>
+
+  <h2>📍 Plaza de Santo Domingo</h2>
+
+  <p>
+    Descubre uno de los rincones más conocidos del Centro
+    Histórico de Cartagena de Indias, rodeado de fachadas
+    coloniales, terrazas y restaurantes.
+  </p>
+
+  <div class="galeria-santo-domingo"
+    style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+
+    <img
+      src="https://commons.wikimedia.org/wiki/Special:FilePath/Colombia%2C_Cartagena%2C_Sector_Antiguo%2C_Plaza_de_Santo_Domingo.jpg?width=700"
+      alt="Vista de la Plaza de Santo Domingo"
+      loading="lazy"
+      style="width:100%;height:180px;object-fit:cover;border-radius:10px;">
+
+    <img
+      src="https://commons.wikimedia.org/wiki/Special:FilePath/La_Gorda_Gertrudis.jpg?width=700"
+      alt="Escultura Gertrudis de Fernando Botero"
+      loading="lazy"
+      style="width:100%;height:180px;object-fit:cover;border-radius:10px;">
+
+    <img
+      src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaza_de_Santo_Domingo_Cartagena.jpg?width=700"
+      alt="Arquitectura de la plaza"
+      loading="lazy"
+      style="width:100%;height:180px;object-fit:cover;border-radius:10px;">
+
+    <img
+      src="https://commons.wikimedia.org/wiki/Special:FilePath/Santo_Domingo_Square_Cartagena.jpg?width=700"
+      alt="Otro rincón de la plaza"
+      loading="lazy"
+      style="width:100%;height:180px;object-fit:cover;border-radius:10px;">
   </div>
 
-</article>
+  <h3>🏛️ Historia y ambiente</h3>
+  <p>
+    La plaza forma parte del paisaje histórico de Cartagena.
+    Es un lugar para caminar, contemplar la arquitectura,
+    tomar fotografías y disfrutar del ambiente del centro.
+    Su escultura más reconocida es Gertrudis, obra de
+    Fernando Botero.
+  </p>
+
+  <h3>📸 Recomendaciones para tu visita</h3>
+  <ul>
+    <li>Visita la plaza durante el día para apreciar sus detalles.</li>
+    <li>Lleva tu cámara o celular para tomar fotografías.</li>
+    <li>Antes de consumir en un restaurante, confirma los precios.</li>
+    <li>Si contratas una actividad, pregunta por el precio total.</li>
+  </ul>
+
+  <a class="primary"
+    style="display:block;text-align:center;margin-top:15px;"
+    target="_blank" rel="noopener"
+    href="https://www.google.com/maps/search/?api=1&query=Plaza+de+Santo+Domingo+Cartagena">
+    🗺️ Cómo llegar a la plaza
+  </a>
+</section>
+
+<script>
+function abrirFichaVive(id) {
+  const ficha = document.getElementById('ficha-' + id);
+  if (!ficha) return;
+
+  ficha.style.display = 'block';
+  ficha.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function cerrarFichaVive(id) {
+  const ficha = document.getElementById('ficha-' + id);
+  if (!ficha) return;
+
+  ficha.style.display = 'none';
+}
+</script>
   
 <article class="card"
   data-category="Joyerías y esmeraldas"
