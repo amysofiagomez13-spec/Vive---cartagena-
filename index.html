@@ -369,9 +369,13 @@ document.getElementById('registroNegociosForm').addEventListener('submit', funct
   );
 });
 </script>
-  section class="business"><h2>¿Tienes un negocio turístico?</h2><p>Restaurantes, hoteles, guías y operadores: próximamente podrán solicitar un espacio para promocionar sus servicios en Vive Cartagena.</p><a class="
-<a class="btn" href="https://wa.me/573136069821?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Vive%20Cartagena" target="_blank" rel="noopener">Consultar por WhatsApp ↗</a>
-  " target="_blank" rel="noopener">Consultar por WhatsApp ↗</a></section>
+  
+<section class="business">
+  <h2>¿Tienes un negocio turístico?</h2>
+  <p>Restaurantes, hoteles, joyerías, guías y operadores: contacta con Vive Cartagena para consultar los planes de publicidad.</p>
+  <a class="btn" href="https://wa.me/573136069821?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20publicidad%20en%20Vive%20Cartagena" target="_blank" rel="noopener">Quiero anunciar mi negocio ↗</a>
+</section>
+  
 </main><footer>Vive Cartagena · Prototipo inicial independiente. No es un sitio oficial de turismo.<br>Los negocios y servicios deben verificarse antes de recomendarse o vender reservas.</footer>
 <script>
 const cards=[...document.querySelectorAll('.card')];let current='Todos';let term='';function update(){let count=0;cards.forEach(card=>{const category=card.dataset.category;const search=(card.dataset.search+' '+card.innerText).toLowerCase();const show=(current==='Todos'||category===current)&&search.includes(term);card.classList.toggle('hidden',!show);if(show)count++});document.querySelector('#empty').classList.toggle('hidden',count!==0)}document.querySelectorAll('.chip').forEach(btn=>btn.addEventListener('click',()=>{current=btn.dataset.filter;document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('active',b===btn));update()}));document.querySelector('#searchForm').addEventListener('submit',e=>{e.preventDefault();term=document.querySelector('#searchInput').value.trim().toLowerCase();update()});document.querySelector('#searchInput').addEventListener('input',e=>{term=e.target.value.trim().toLowerCase();update()});if('serviceWorker'in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
