@@ -467,30 +467,117 @@ body > .hero {
     coloniales, terrazas y restaurantes.
   </p>
 
- <div class="galeria-santo-domingo"
+<div class="galeria-santo-domingo"
   style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
 
   <img
-    src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=700&q=80"
-    alt="Arquitectura colonial de Cartagena"
-    style="width:100%;height:160px;object-fit:cover;border-radius:10px;">
+    src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=900&q=85"
+    alt="Arquitectura colonial"
+    onclick="abrirGaleriaSanto(0)"
+    style="width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer;">
 
   <img
-    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=80"
+    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85"
     alt="Restaurante y terraza"
-    style="width:100%;height:160px;object-fit:cover;border-radius:10px;">
+    onclick="abrirGaleriaSanto(1)"
+    style="width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer;">
 
   <img
-    src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=700&q=80"
-    alt="Calle y ambiente urbano"
-    style="width:100%;height:160px;object-fit:cover;border-radius:10px;">
+    src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85"
+    alt="Calle urbana"
+    onclick="abrirGaleriaSanto(2)"
+    style="width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer;">
 
   <img
-    src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=700&q=80"
+    src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=900&q=85"
     alt="Arte y escultura"
-    style="width:100%;height:160px;object-fit:cover;border-radius:10px;">
+    onclick="abrirGaleriaSanto(3)"
+    style="width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer;">
 
- </div>
+</div>
+
+<!-- VISOR DE FOTOGRAFÍAS -->
+<div id="visorGaleriaSanto"
+  style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:99999;align-items:center;justify-content:center;flex-direction:column;padding:15px;box-sizing:border-box;">
+
+  <button onclick="cerrarGaleriaSanto()"
+    aria-label="Cerrar galería"
+    style="position:absolute;top:18px;right:20px;background:#fff;color:#222;border:0;border-radius:50%;width:44px;height:44px;font-size:28px;cursor:pointer;">
+    ×
+  </button>
+
+  <button onclick="cambiarFotoSanto(-1)"
+    aria-label="Fotografía anterior"
+    style="position:absolute;left:10px;top:48%;background:#fff;color:#222;border:0;border-radius:50%;width:42px;height:42px;font-size:25px;cursor:pointer;">
+    ‹
+  </button>
+
+  <img id="fotoGrandeSanto"
+    src=""
+    alt="Fotografía ampliada de Plaza de Santo Domingo"
+    style="display:block;max-width:85%;max-height:75vh;object-fit:contain;border-radius:10px;">
+
+  <button onclick="cambiarFotoSanto(1)"
+    aria-label="Fotografía siguiente"
+    style="position:absolute;right:10px;top:48%;background:#fff;color:#222;border:0;border-radius:50%;width:42px;height:42px;font-size:25px;cursor:pointer;">
+    ›
+  </button>
+
+  <p id="contadorGaleriaSanto"
+    style="color:white;font-size:16px;margin-top:18px;">
+    1 / 4
+  </p>
+</div>
+
+<script>
+(function () {
+  const fotosSanto = Array.from(
+    document.querySelectorAll('.galeria-santo-domingo img')
+  );
+
+  let indiceSanto = 0;
+
+  window.abrirGaleriaSanto = function (indice) {
+    indiceSanto = indice;
+    mostrarFotoSanto();
+
+    const visor = document.getElementById('visorGaleriaSanto');
+    visor.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  };
+
+  function mostrarFotoSanto() {
+    const foto = fotosSanto[indiceSanto];
+
+    document.getElementById('fotoGrandeSanto').src = foto.src;
+    document.getElementById('fotoGrandeSanto').alt = foto.alt;
+    document.getElementById('contadorGaleriaSanto').textContent =
+      (indiceSanto + 1) + ' / ' + fotosSanto.length;
+  }
+
+  window.cambiarFotoSanto = function (paso) {
+    indiceSanto =
+      (indiceSanto + paso + fotosSanto.length) % fotosSanto.length;
+
+    mostrarFotoSanto();
+  };
+
+  window.cerrarGaleriaSanto = function () {
+    document.getElementById('visorGaleriaSanto').style.display = 'none';
+    document.body.style.overflow = '';
+  };
+
+  document.addEventListener('keydown', function (evento) {
+    const visor = document.getElementById('visorGaleriaSanto');
+
+    if (visor.style.display !== 'flex') return;
+
+    if (evento.key === 'Escape') window.cerrarGaleriaSanto();
+    if (evento.key === 'ArrowRight') window.cambiarFotoSanto(1);
+    if (evento.key === 'ArrowLeft') window.cambiarFotoSanto(-1);
+  });
+})();
+</script>
 
   <h3>🏛️ Historia y ambiente</h3>
   <p>
